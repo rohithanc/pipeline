@@ -9,6 +9,7 @@ pipeline{
         stage('Stage Two- Install Docker'){
           steps{
             sh "curl https://get.docker.com | sudo bash"
+            sh "sudo usermod -aG docker $(whoami)"
           }
         }
         stage('Stage Three- Install Docker Compose'){
